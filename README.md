@@ -37,11 +37,39 @@ A basic Tailwind CSS setup. Includes a `components.json` for Shadcn UI component
 
 #### Biome (via ultracite)
 
-[Biome](https://biomejs.dev/) is configured through [ultracite](https://github.com/haydenbleasel/ultracite) for linting and formatting. Run `pnpm check` to check and `pnpm fix` to auto-fix.
+[Biome](https://biomejs.dev/) is configured through [ultracite](https://github.com/haydenbleasel/ultracite) for linting and formatting. Run `bun run check` to check and `bun run fix` to auto-fix.
 
 #### Husky + Lint-staged
 
 Pre-commit hooks to run Biome on staged files.
+
+## Using a Different Package Manager
+
+This template uses [bun](https://bun.sh) by default. To use a different package manager (npm, pnpm, yarn, etc.), update the following:
+
+1. **`src-tauri/tauri.conf.json`** — Replace the `beforeDevCommand` and `beforeBuildCommand`:
+   ```jsonc
+   // For npm/yarn/pnpm:
+   "beforeDevCommand": "<pm> run dev",
+   "beforeBuildCommand": "<pm> run build",
+   ```
+2. **`.husky/pre-commit`** — Replace `bunx` with your package manager's equivalent:
+   ```sh
+   npx lint-staged        # npm
+   pnpm dlx lint-staged   # pnpm
+   yarn dlx lint-staged   # yarn
+   ```
+3. **`package.json`** — Update the `lint-staged` command:
+   ```jsonc
+   "lint-staged": {
+     "*.{js,jsx,ts,tsx,json,jsonc,css,scss,md,mdx}": [
+       "npx ultracite fix"        // npm
+       // "pnpm dlx ultracite fix" // pnpm
+       // "yarn dlx ultracite fix" // yarn
+     ]
+   }
+   ```
+4. Delete `bun.lock` and run your package manager's install command to generate a new lock file.
 
 ## How to use?
 

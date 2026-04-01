@@ -1,76 +1,76 @@
-import { cn } from '@/lib/utils'
-import { ReactNode } from 'react'
+import type { ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
 export function ErrorView({
-    children,
-    className
+  children,
+  className,
 }: {
-    children: ReactNode
-    className?: string
+  children: ReactNode;
+  className?: string;
 }) {
-    return (
-        <main
-            className={cn(
-                'h-full flex flex-col items-center justify-center text-center bg-red-50 p-8',
-                className
-            )}
-        >
-            <div className="text-center">
-                <p className="text-base font-semibold text-red-600">Error</p>
-                {children}
-            </div>
-        </main>
-    )
+  return (
+    <main
+      className={cn(
+        "flex h-full flex-col items-center justify-center bg-red-50 p-8 text-center",
+        className
+      )}
+    >
+      <div className="text-center">
+        <p className="font-semibold text-base text-red-600">Error</p>
+        {children}
+      </div>
+    </main>
+  );
 }
 
 export function ErrorHeader({
-    children,
-    className
+  children,
+  className,
 }: {
-    children: ReactNode
-    className?: string
+  children: ReactNode;
+  className?: string;
 }) {
-    return (
-        <h1
-            className={cn(
-                'mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl',
-                className
-            )}
-        >
-            {children}
-        </h1>
-    )
+  return (
+    <h1
+      className={cn(
+        "mt-4 font-bold text-3xl text-gray-900 tracking-tight sm:text-5xl",
+        className
+      )}
+    >
+      {children}
+    </h1>
+  );
 }
 
 export function ErrorDescription({
-    children,
-    className
+  children,
+  className,
 }: {
-    children: ReactNode
-    className?: string
+  children: ReactNode;
+  className?: string;
 }) {
-    return (
-        <p className={cn('mt-6 text-base leading-7 text-gray-600', className)}>
-            {children}
-        </p>
-    )
+  return (
+    <p className={cn("mt-6 text-base text-gray-600 leading-7", className)}>
+      {children}
+    </p>
+  );
 }
 
 export function ErrorActions({
-    children,
-    className
+  children,
+  className,
 }: {
-    children: ReactNode
-    className?: string
+  children: ReactNode;
+  className?: string;
 }) {
-    return (
-        <div
-            className={cn(
-                'mt-10 flex items-center justify-center gap-x-6',
-                className
-            )}
-        >
-            {children}
-        </div>
-    )
+  return (
+    <div
+      className={cn(
+        "mt-10 flex items-center justify-center gap-x-6",
+        className
+      )}
+    >
+      {children}
+    </div>
+  );
 }

@@ -1,17 +1,17 @@
-import { createBrowserRouter, RouterProvider } from 'react-router'
+import { createBrowserRouter, RouterProvider } from "react-router";
 
 const createAppRouter = () =>
-    createBrowserRouter([
-        {
-            path: '/',
-            lazy: () => import('@/app/routes/home')
-        },
-        {
-            path: '*',
-            lazy: () => import('@/app/routes/not-found')
-        }
-    ])
+  createBrowserRouter([
+    {
+      path: "/",
+      lazy: () => import("@/app/routes/home"),
+    },
+    {
+      path: "*",
+      lazy: () => import("@/app/routes/not-found"),
+    },
+  ]);
 
 export default function AppRouter() {
-    return <RouterProvider router={createAppRouter()} />
+  return <RouterProvider router={createAppRouter()} />;
 }

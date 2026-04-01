@@ -1,5 +1,0 @@
-# Ignore artifacts:
-build
-src-tauri
-node_modules
-pnpm-lock.yaml

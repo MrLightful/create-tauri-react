@@ -27,7 +27,7 @@
     "react-dom": "^19.2.1",
     "react-error-boundary": "^6.0.0",
     "react-hook-form": "^7.68.0",
-    "react-router": "^7.10.1",
+    "react-router": "^8.1.0",
     "tailwind-merge": "^3.4.0",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^4.1.13"
